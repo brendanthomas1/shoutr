@@ -18,4 +18,9 @@ class User < ApplicationRecord
   def unlike(shout)
     liked_shouts.destroy(shout)
   end
+
+  # overridden from rails
+  def to_param
+    username
+  end
 end

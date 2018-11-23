@@ -1,3 +1,5 @@
+# Null object
+
 class Guest
   def email
     ''
