@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
+    member do
+      post "follow" => "followed_users#create"
+      delete 'unfollow' => 'followed_users#destroy'
+    end
   end
 
   get "/sign_in" => "sessions#new", as: "sign_in"
